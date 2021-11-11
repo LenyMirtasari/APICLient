@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2PlXxdavevwUkckeIEKJHljuBDrs9AcsXupCPCTWjZ72SOJpKUSJC2r0PBFkjmAVwtvY/KqTJeDj6vPk9ANtbA==",
+  "dgSpecHash": "Q4Q68x90YFbk/f5hzpM5OW71chXBbfLfxAplnEoc+3oVeeFR0kPjy/qElpk99AVUREQpTwGJWWOjVMuogJ/F/w==",
   "success": true,
-  "projectFilePath": "D:\\MCC\\API\\API\\API.csproj",
+  "projectFilePath": "D:\\MCC\\APICLient\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\bcrypt.net-core\\1.6.0\\bcrypt.net-core.1.6.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",

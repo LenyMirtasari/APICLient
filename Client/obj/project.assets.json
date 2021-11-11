@@ -7508,11 +7508,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MCC\\API\\Client\\Client.csproj",
+      "projectUniqueName": "D:\\MCC\\APICLient\\Client\\Client.csproj",
       "projectName": "Client",
-      "projectPath": "D:\\MCC\\API\\Client\\Client.csproj",
+      "projectPath": "D:\\MCC\\APICLient\\Client\\Client.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\MCC\\API\\Client\\obj\\",
+      "outputPath": "D:\\MCC\\APICLient\\Client\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7529,8 +7529,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\MCC\\API\\API\\API.csproj": {
-              "projectPath": "D:\\MCC\\API\\API\\API.csproj"
+            "D:\\MCC\\APICLient\\API\\API.csproj": {
+              "projectPath": "D:\\MCC\\APICLient\\API\\API.csproj"
             }
           }
         }
