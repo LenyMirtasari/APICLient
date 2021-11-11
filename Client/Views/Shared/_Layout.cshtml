@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Client</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" href="~/css/belajarCSS.css" />
+
+</head>
+<body>
+    <header>
+        @* <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark box-shadow fixed-top">*@
+        <nav class="navbar navbar-light bg-dark fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand text-light" href="#">
+                    @* <img src="https://source.unsplash.com/30x24/animal" alt="" width="30" height="24" class="d-inline-block align-text-top">*@
+                    <div id="div1" alt="" width="30" height="24" class="fa d-inline align-text-top"></div>
+                    Leny Mirtasari
+                </a>
+            </div>
+        </nav>
+        @*</nav>*@
+    </header>
+    <div class="container mt-3">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer bg-dark text-center text-white fixed-bottom ">
+        <!-- Grid container -->
+        <div class="row">
+            <!-- Section: Social media -->
+            <section class="col-6 m-0">
+                <!-- Facebook -->
+                <a class="btn btn-floating m-0" href="#!" role="button">
+                    <i class="fa fa-facebook"></i>
+                </a>
+
+                <!-- Twitter -->
+                <a class="btn btn-floating m-0" href="#!" role="button">
+                    <i class="fa fa-twitter"></i>
+                </a>
+
+                <!-- Google -->
+                <a class="btn btn-floating m-0" href="#!" role="button">
+                    <i class="fa fa-google"></i>
+                </a>
+
+                <!-- Instagram -->
+                <a class="btn btn-floating m-0" href="#!" role="button">
+                    <i class="fa fa-instagram"></i>
+                </a>
+
+                <!-- Github -->
+                <a class="btn btn-floating m-0" href="#!" role="button">
+                    <i class="fa fa-github"></i>
+                </a>
+            </section>
+            <div class="col-6 text-center p-2 ">
+                © 2021 Copyright:
+                <a class="text-white" href="https://mdbootstrap.com/">Leny Mirtasari</a>
+            </div>
+            <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+        <!-- Copyright -->
+        <!-- Copyright -->
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/belajarArray.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+    <script>
+        function smile() {
+            var a;
+            a = document.getElementById("div1");
+            a.innerHTML = "&#xf118;";
+            setTimeout(function () {
+                a.innerHTML = "&#xf11a;";
+            }, 1000);
+            setTimeout(function () {
+                a.innerHTML = "&#xf119;";
+            }, 2000);
+            setTimeout(function () {
+                a.innerHTML = "&#xf11a;";
+            }, 3000);
+        }
+        smile();
+        setInterval(smile, 4000);
+
+    </script>
+</body>
+</html>

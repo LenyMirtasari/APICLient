@@ -1,0 +1,71 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_LayoutAdmin";
+}
+
+<div class="row col-12 ">
+    <div class="col-xl-6 col-lg-5 ">
+        <div class="card shadow mb-md-4 ">
+         
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Pie Chart</h6>
+            </div>
+         
+            <div class="card-body">
+                <div class="chart-pie pt-0">
+                    <div id="chart"></div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="col-xl-5 col-lg-5 ">
+        <div class="card shadow mb-md-4">
+         
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Donut Chart</h6>
+            </div>
+         
+            <div class="card-body">
+                <div class="chart-pie pt-0 ">
+                    <div id="donutChart"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row mt-4 col-12 ">
+
+    <div class="col-xl-6 col-lg-7">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Bar Chart</h6>
+            </div>
+            <div class="card-body">
+                <div class="chart-bar">
+                    <div id="barchart"></div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+@section scripts{
+  @*buat pie*@
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+
+</script>
+
+
+        @*
+<script src="~/js/site.js" asp-append-version="true"></script>*@
+<script src="~/js/belajarArray.js"></script>
+}

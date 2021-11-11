@@ -1,0 +1,316 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_LayoutAdmin";
+}
+<div class="mb-3" id="tabel2">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create">
+        Register
+    </button>
+    <button type="submit" id="submit" class="btn btn-success" onclick="ExportExcel()">Excel</button>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">DataTable with minimal features & hover style</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <table id="example" class="table-bordered table-striped" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>NIK</th>
+                            <th>Name</th>
+                            <th>Gender</th>
+                            <th>Phone</th>
+                            <th>Salary</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@*
+<div class="row mt-4 col-12 ">
+    <div class="col-xl-6 col-lg-5 mb-lg-4">
+        <div class="card shadow mb-md-4 ">
+             Card Header - Dropdown 
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Pie Chart</h6>
+            </div>
+             Card Body 
+            <div class="card-body">
+                <div class="chart-pie pt-0">
+                    <div id="chart"></div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="col-xl-6 col-lg-5 ">
+        <div class="card shadow mb-md-4">
+             Card Header - Dropdown 
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Donut Chart</h6>
+            </div>
+             Card Body 
+            <div class="card-body">
+                <div class="chart-pie pt-0 ">
+                    <div id="donutChart"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row mt-4 col-12 ">
+
+    <div class="col-xl-8 col-lg-7">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Bar Chart</h6>
+            </div>
+            <div class="card-body">
+                <div class="chart-bar">
+                    <div id="barchart"></div>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+</div>
+*@
+    <div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Register</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="EmployeeForm" novalidate>
+
+                        <div class="row form-group">
+                            <div class="col">
+                                <label for="Nik">NIK</label>
+                                <input type="text" class="form-control " name="nik" id="Nik" aria-describedby="emailHelp" placeholder="Enter NIK">
+                             
+
+                            </div>
+                            <div class="col">
+                                <label for="FirstName">First Name</label>
+                                <input type="text" id="FirstName" name="FirstName" class="form-control" placeholder="First name" required>
+                              
+                            </div>
+                            <div class="col">
+                                <label for="LastName">Last Name</label>
+                                <input type="text" id="LastName" name="LastName" class="form-control" placeholder="Last name" required>
+                           
+                            </div>
+                        </div>
+
+
+                        <div class="row form-group">
+
+
+                            <div class="col">
+                                <label for="PhoneNumber">Phone Number</label>
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">+62</div>
+                                    </div>
+                                    <input type="text" class="form-control" id="PhoneNumber" name="PhoneNumber" placeholder="Enter Phone Number" required>
+                                   
+                                </div>
+                            </div>
+                            <div class="col">
+                                <label for="Birthdate">Birthdate</label>
+                                <input type="date" id="Birtdate" name="Birtdate" class="form-control" placeholder="Birthdate" required>
+                              
+                            </div>
+                            <div class="col">
+                                <div>
+                                    <label for="Gender">Gender</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="Gender" type="radio" name="inlineRadioOptions" value="0">
+                                    <label class="form-check-label" for="inlineRadio1">Male</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="Gender" type="radio" name="inlineRadioOptions" value="1" checked>
+                                    <label class="form-check-label" for="inlineRadio2">Female</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col">
+                                <label for="Email">Email Address</label>
+                                <input type="email" class="form-control" id="Email" name="Email" aria-describedby="emailHelp" placeholder="Enter Email" required>
+                              
+                            </div>
+                            <div class="col">
+                                <label for="Password">Password</label>
+                                <input type="password" class="form-control" id="Password" name="Password" placeholder="Password" required>
+                            
+                            </div>
+                            <div class="col">
+                                <label for="Salary">Salary</label>
+                                <input type="number" class="form-control" id="Salary" name="Salary" placeholder="Salary" required>
+                              
+                            </div>
+                        </div>
+
+
+                        <div class="row form-group">
+                            <div class="col">
+                                <label for="Degree">Degree</label>
+                                <input type="text" id="Degree" class="form-control" name="Degree" placeholder="Degree" required>
+                               
+                            </div>
+                            <div class="col">
+                                <label for="Gpa">GPA</label>
+                                <input type="text" id="Gpa" class="form-control" name="Gpa" placeholder="GPA" required>
+                              
+                            </div>
+                            <div class="col">
+
+                                <label for="University">University</label>
+                                <select id="University" name="University" class="form-control">
+                                    <option selected>Choose...</option>
+                                    <option>...</option>
+                                </select>
+
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" id="submit" class="btn btn-primary" onclick="Validation() ">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Button trigger modal -->
+    @*<button type="button" class ="btn btn-primary" data-bs-toggle="modal" data-bs-target="#update">
+            Launch demo modal
+        </button>
+    *@
+    <div class="modal fade" id="ModalUpdate" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Update Employee</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="needs-validation" id="EmployeeForm1">
+                        <div class="row form-group">
+                            <div class="col">
+                                <label for="Nik">NIK</label>
+                                <input type="text" class="form-control" name="nik" id="Nik1" aria-describedby="emailHelp" placeholder="Enter NIK" disabled>
+                                <small id="coba" class="form-text text-muted"> </small>
+                            </div>
+                            <div class="col">
+                                <label for="FirstName">First Name</label>
+                                <input type="text" id="FirstName1" name="FirstName" class="form-control" placeholder="First name" required>
+                            </div>
+                            <div class="col">
+                                <label for="LastName">Last Name</label>
+                                <input type="text" id="LastName1" name="LastName" class="form-control" placeholder="Last name" required>
+                            </div>
+                        </div>
+
+
+                        <div class="row form-group">
+
+                            <div class="col">
+                                <label for="PhoneNumber">Phone Number</label>
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">+62</div>
+                                    </div>
+                                    <input type="text" class="form-control" id="PhoneNumber1" name="PhoneNumber" placeholder="Enter Phone Number" required>
+                                    <div class="invalid-tooltip">
+                                        This field is required.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <label for="Birthdate">Birthdate</label>
+                                <input type="date" name="Birtdate" id="Birtdate1" class="form-control" placeholder="Birthdate" required>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="inputState">Gender</label>
+                                    <select id="gender" class="form-control" name="gender">
+                                        <option>Choose...</option>
+                                        <option value="0">Male</option>
+                                        <option value="1">Female</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col">
+                                <label for="Email">Email Address</label>
+                                <input type="email" class="form-control" name="Email" id="Email1" aria-describedby="emailHelp" placeholder="Enter Email" required>
+
+                            </div>
+                            <div class="col">
+                                <label for="Salary">Salary</label>
+                                <input type="number" name="Salary" class="form-control" id="Salary1" placeholder="Salary" required>
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="Update(document.getElementById('Nik1').value)">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    @section scripts{
+        <script src="~/bootstrap/vendor/datatables/jquery.dataTables.min.js"></script>
+        <script src="~/bootstrap/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="~/bootstrap/js/demo/datatables-demo.js"></script>
+
+
+        <script type="text/javascript" charset="utf-8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+        <script type="text/javascript" charset="utf-8" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.print.min.js"></script>
+        @*buat pie*@
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <script>
+            
+        </script>
+
+
+        @*    <script src="~/js/site.js" asp-append-version="true"></script>*@
+        <script src="~/js/belajarArray.js"></script>
+
+    }
