@@ -16,6 +16,7 @@
     <link href="~/bootstrap/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="~/bootstrap/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
     <link href="~/Apex/dist/apexcharts.css" rel="stylesheet" />
+
     @*    <link rel="stylesheet" href="/cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" />*@
     @*    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -55,7 +56,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="https://localhost:44312/Chart">
+                <a class="nav-link" asp-controller="Chart" asp-action="Index">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span>
                 </a>
@@ -79,8 +80,8 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="https://localhost:44312/DataTable">Data Table</a>
-                        <a class="collapse-item" href="~/bootstrap/cards.html">Cards</a>
+                        <a class="collapse-item" asp-controller="DataTable" asp-action="Index">Data Table</a>
+                        <a class="collapse-item" asp-controller="Tugas1" asp-action="Index" >Pokemon</a>
                     </div>
                 </div>
             </li>
@@ -96,20 +97,20 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
+            <!--<li class="nav-item">
                 <a class="nav-link" href="~/bootstrap/charts.html">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Charts</span>
                 </a>
-            </li>
+            </li>-->
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item">
+            <!--<li class="nav-item">
                 <a class="nav-link" href="~/bootstrap/tables.html">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Tables</span>
                 </a>
-            </li>
+            </li>-->
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -333,10 +334,10 @@
                                     Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <button class="dropdown-item" href="Emloyees/Logout" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
-                                </a>
+                                </button>
                             </div>
                         </li>
 
@@ -388,7 +389,10 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <form action="/Employees/Logout">
+                        <button class="btn btn-primary" >Logout</button>
+                    </form>
+                    
                 </div>
             </div>
         </div>

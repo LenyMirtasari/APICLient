@@ -113,7 +113,7 @@ namespace API.Controllers
                             );
                 var idtoken = new JwtSecurityTokenHandler().WriteToken(token);
                 claims.Add(new Claim("TokenSecurity", idtoken.ToString()));
-                return Ok(new { status = HttpStatusCode.OK,idtoken, message = "Login Success " });
+                return Ok(new JWTokenVM { Token = idtoken, Messages = "Login Success " });
             }
         }
 

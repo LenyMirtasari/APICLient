@@ -44,7 +44,19 @@ animals.forEach(a => {
 })
 console.log(cats)*/
 
+/*$.ajax({
+    url: "https://localhost:44326/API/Universities",
+    success: function (result) {
 
+        var university = "";
+        $.each(result, function (key, val) {
+            university += ` <option value="${val.id}">${val.name}</option>`;
+        })
+
+        $('#University').html(university);
+    }
+
+})*/
 
 
 
@@ -524,6 +536,52 @@ function rubah(angka) {
     return ribuan;
 }
 
+/*$("#LoginForm").validate({
+    rules: {
+        email: {
+            required: true
+        },
+        password: {
+            required: true
+        },
+        
+    },
+
+    errorPlacement: function (error, element) {
+        error.insertAfter(element);
+    },
+    highlight: function (element) {
+        $(element).closest('.form-control').addClass('is-invalid');
+    },
+    unhighlight: function (element) {
+        $(element).closest('.form-control').removeClass('is-invalid');
+    }
+
+});
+
+function LoginValidation() {
+    *//*var obj1 = new Object();
+    obj1.Email = $("Email2")
+    $.ajax({
+        url: "",
+        type: "POST",
+        data: 
+    })*//*
+    var a = $("#LoginForm").valid();
+    console.log(a);
+    if (a == true) {
+        Insert();
+    } else {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Register Failed!',
+            footer: 'All columns must be filled !'
+
+        })
+    }
+}*/
+
 function Insert() {
     var obj = new Object(); 
     obj.NIK = $("#Nik").val();
@@ -548,7 +606,7 @@ function Insert() {
                     'Content-Type': 'application/json',
                     'charset': 'utf-8'
                 },*/
-               url: "Employees/Register/",
+                url: "Employees/Register/",
                 type: "POST",
                 'data': obj, //objek kalian
                 'dataType': 'json',
@@ -674,6 +732,7 @@ function Validation() {
         })
     }
 }
+
 
 
 $("#EmployeeForm1").validate({

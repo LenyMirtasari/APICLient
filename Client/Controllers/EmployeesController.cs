@@ -44,23 +44,31 @@ namespace Client.Controllers
             return Json(result);
         }
 
-        [ValidateAntiForgeryToken]
-        [HttpPost("Auth/")]
+       /* [ValidateAntiForgeryToken]*/
+      /*  [HttpPost("Auth/")]*/
+
         public async Task<IActionResult> Auth(LoginVM login)
         {
             var jwtToken = await repository.Auth(login);
             var token = jwtToken.Token;
 
             if (token == null)
-            {
-                return RedirectToAction("index");
+            {   
+                return RedirectToAction("index", "Home");
             }
 
             HttpContext.Session.SetString("JWToken", token);
           //  HttpContext.Session.SetString("Name", jwtHandler.GetName(token));
           // HttpContext.Session.SetString("ProfilePicture", "assets/img/theme/user.png");
 
-            return RedirectToAction("index", "dashboard");
+            return RedirectToAction("index", "DataTable");
+        }
+
+        [Authorize]
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("index", "Home");
         }
     }
 }

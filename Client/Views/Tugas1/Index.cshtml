@@ -5,13 +5,13 @@
     Layout = "_Layout";
 }
 @**@
-<div class="row " id="grid">   
+<div class="row " id="grid">
     <div class="col-6 ">
-        
+
         <div class="row" id="blue" style="background-color: blue;">
 
-            <p >Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.</p>        
-           
+            <p>Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.</p>
+
         </div>
         <div class="row" id="kuning" style="background-color:yellow">
             <p>Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.</p>
@@ -26,13 +26,15 @@
     <div class="col-2" id="button1">
         <button type="button" class="btn btn-primary">Blue</button>
     </div>
-    <div class="col-2" >
+    <div class="col-2">
         <button type="button" class="btn btn-warning" onclick="yellow();">Yellow</button>
     </div>
     <div class="col-2" id="button3">
-        <button type="button" class="btn btn-success" >Green</button>
+        <button type="button" class="btn btn-success">Green</button>
     </div>
 </div>
+
+
 
 <div class="row mt-5">
     <table class="table table-hover">
@@ -43,7 +45,7 @@
                 <th scope="col">Description</th>
             </tr>
         </thead>
-        <tbody id="tablePpl">         
+        <tbody id="tablePpl">
         </tbody>
     </table>
 </div>
@@ -66,3 +68,7 @@
         </div>
     </div>
 </div>
+@section scripts{
+    <script src="~/js/site.js"></script>
+
+}

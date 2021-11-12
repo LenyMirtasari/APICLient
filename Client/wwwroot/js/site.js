@@ -6,7 +6,7 @@
     document.getElementById("demo").innerHTML = "Hello World";
 });*/
 
-/*var b1 = document.getElementById("button1");
+var b1 = document.getElementById("button1");
 b1.addEventListener("click", function () {
     blue.style.backgroundColor = "red";
 });
@@ -20,4 +20,4 @@ function yellow() {
 
 $("#button3").click(function () {
     $("#green").toggle(1000);
-});*/
+});
